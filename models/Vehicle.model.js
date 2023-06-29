@@ -14,7 +14,7 @@ const vehicleSchema = new Schema(
             type: String,
             enum: ["Yes", "No",],
           },
-    carsharing: {
+    carSharing: {
             type: String,
             enum: ["Yes", "No",],
           },
