@@ -25,8 +25,14 @@ const userSchema = new Schema(
     phoneNumber: {
       type: Number,
     },
+    Driver: {
+      type: String,
+      enum: ["Yes", "No"],
+      required: [true, "This is required."],
+    },
     probationaryDriver: {
       type: String,
+      enum: ["Yes", "No"],
       required: [true, "This is required."],
     },
   },
