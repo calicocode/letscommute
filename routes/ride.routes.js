@@ -134,3 +134,4 @@ router.delete('/rides/:rideId', (req, res, next) => {
         })
 });
 
+module.exports = router;

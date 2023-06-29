@@ -8,7 +8,8 @@ const vehicleSchema = new Schema(
         required: [true, "Vehicle is required."],
       },
     vehicleImage: {
-      type: Image,
+      type: String,
+      default: "https://www.mivodo.com/wp-content/uploads/2021/02/seat-alhambra-grosser-van-fuer-familien.jpg",
     },
     probationaryDriversLicense: {
             type: String,
