@@ -12,10 +12,6 @@ const vehicleSchema = new Schema(
       default:
         "https://www.mivodo.com/wp-content/uploads/2021/02/seat-alhambra-grosser-van-fuer-familien.jpg",
     },
-    carSharing: {
-      type: String,
-      enum: ["Yes", "No"],
-    },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

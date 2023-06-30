@@ -6,12 +6,11 @@ const User = require("../models/User.model");
 
 //  POST /api/tasks  -  Creates a new task
 router.post("/vehicles", (req, res, next) => {
-  const { vehicle, vehicleImage, carSharing, userId } = req.body;
+  const { vehicle, vehicleImage, userId } = req.body;
 
   const newVehicleDetails = {
     vehicle: vehicle,
     vehicleImage: vehicleImage,
-    carSharing: carSharing,
     userId: userId,
   };
 
