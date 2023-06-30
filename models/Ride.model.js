@@ -4,38 +4,44 @@ const { mongoose, Schema, model } = require("mongoose");
 const rideSchema = new Schema(
   {
     fromCity: {
-        type: String,
-        required: [true, "From City is required."],
-      },
+      type: String,
+      required: [true, "From City is required."],
+    },
     toCity: {
       type: String,
-      required: [true, "To City is required."]
+      required: [true, "To City is required."],
     },
     IntervalOfRides: {
-            type: String,
-            enum: ["multiple times a Week","1 x Week", "Every 2 Weeks", "Every 2 Weeks", "Once a month",],
-          },
+      type: String,
+      enum: [
+        "multiple times a Week",
+        "1 x Week",
+        "Every 2 Weeks",
+        "Every 3 Weeks",
+        "Once a month",
+      ],
+    },
     seats: {
-            type: Number,
-            enum: ["1", "2", "3", "4", "5", "6",],
-          },
-    Driver: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User"
-          },
-    
+      type: Number,
+      enum: ["1", "2", "3", "4", "5", "6"],
+    },
+    driver: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+
     vehicle: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Vehicle"
-          },
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Vehicle",
+    },
     vehicleImage: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Vehicle"
-          },
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Vehicle",
+    },
     probationaryDriversLicense: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Vehicle"
-          },
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Vehicle",
+    },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
