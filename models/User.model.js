@@ -20,12 +20,12 @@ const userSchema = new Schema(
     },
     profileImage: {
       type: String,
-      required: [true, "Name is required."],
+      //required: [true, "Name is required."],
     },
     phoneNumber: {
       type: Number,
     },
-    Driver: {
+    driver: {
       type: String,
       enum: ["Yes", "No"],
       required: [true, "This is required."],
