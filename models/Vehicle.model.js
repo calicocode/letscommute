@@ -12,10 +12,6 @@ const vehicleSchema = new Schema(
       default:
         "https://www.mivodo.com/wp-content/uploads/2021/02/seat-alhambra-grosser-van-fuer-familien.jpg",
     },
-    probationaryDriversLicense: {
-      type: String,
-      enum: ["Yes", "No"],
-    },
     carSharing: {
       type: String,
       enum: ["Yes", "No"],
