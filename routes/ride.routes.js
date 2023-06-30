@@ -11,7 +11,7 @@ const Vehicle = require("../models/Vehicle.model");
 router.post("/rides", (req, res, next) => {
     const { fromCity, toCity, intervalOfRides, seats, driver, vehicle, vehicleImage, probationaryDriversLicense} = req.body;
 
-    const newProject = {
+    const newRide = {
         fromCity: fromCity,
         toCity: toCity,
         intervalOfRides: intervalOfRides,
@@ -22,7 +22,7 @@ router.post("/rides", (req, res, next) => {
         probationaryDriversLicense: probationaryDriversLicense,
     }
 
-    Project.create(newProject)
+    Ride.create(newRide)
         .then(response => res.status(201).json(response))
         .catch(err => {
             console.log("error creating a new ride", err);
@@ -37,7 +37,7 @@ router.post("/rides", (req, res, next) => {
 
 // GET /api/rides -  Retrieves all of the rides
 router.get('/rides', (req, res, next) => {
-    Project.find()
+    Ride.find()
         .populate("vehicles")
         .then(response => {
             res.json(response)

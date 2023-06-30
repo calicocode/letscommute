@@ -4,21 +4,22 @@ const { Schema, model } = require("mongoose");
 const vehicleSchema = new Schema(
   {
     vehicle: {
-        type: String,
-        required: [true, "Vehicle is required."],
-      },
+      type: String,
+      required: [true, "Vehicle is required."],
+    },
     vehicleImage: {
       type: String,
-      default: "https://www.mivodo.com/wp-content/uploads/2021/02/seat-alhambra-grosser-van-fuer-familien.jpg",
+      default:
+        "https://www.mivodo.com/wp-content/uploads/2021/02/seat-alhambra-grosser-van-fuer-familien.jpg",
     },
     probationaryDriversLicense: {
-            type: String,
-            enum: ["Yes", "No",],
-          },
+      type: String,
+      enum: ["Yes", "No"],
+    },
     carSharing: {
-            type: String,
-            enum: ["Yes", "No",],
-          },
+      type: String,
+      enum: ["Yes", "No"],
+    },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

@@ -6,19 +6,18 @@ const Ride = require("../models/Ride.model");
 
 //  POST /api/tasks  -  Creates a new task
 router.post("/vehicles", (req, res, next) => {
-    const { vehicle, vehicleImage, probationaryDriversLicense, carSharing, rideId} = req.body;
+    const { vehicle, vehicleImage, carSharing, userId} = req.body;
 
     const newVehicleDetails = { 
         vehicle: vehicle, 
         vehicleImage: vehicleImage, 
-        probationaryDriversLicense: probationaryDriversLicense,
         carSharing: carSharing,
-        rideId: rideId
+        userId: userId
     };
 
     Vehicle.create(newVehicleDetails)
         .then(VehicleFromDB => {
-            return Ride.findByIdAndUpdate(rideId, { $push: { vehicle: vehicleFromDB._id } });
+            return User.findByIdAndUpdate(userId, { $push: { vehicle: vehicleFromDB._id } });
         })
         .then(response => res.status(201).json(response))
         .catch(err => {

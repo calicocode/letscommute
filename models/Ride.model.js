@@ -23,7 +23,7 @@ const rideSchema = new Schema(
     },
     seats: {
       type: Number,
-      enum: ["1", "2", "3", "4", "5", "6"],
+      enum: [1, 2, 3, 4, 5, 6],
     },
     driver: {
       type: mongoose.Schema.Types.ObjectId,
@@ -31,14 +31,6 @@ const rideSchema = new Schema(
     },
 
     vehicle: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Vehicle",
-    },
-    vehicleImage: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Vehicle",
-    },
-    probationaryDriversLicense: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Vehicle",
     },
