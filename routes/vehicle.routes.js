@@ -4,14 +4,14 @@ const mongoose = require("mongoose");
 const Vehicle = require("../models/Vehicle.model");
 const User = require("../models/User.model");
 
-//  POST /api/tasks  -  Creates a new task
+//  POST /api/tasks  -  Creates a new vehicle
 router.post("/vehicles", (req, res, next) => {
-  const { vehicle, vehicleImage, userId } = req.body;
+  const { vehicle, vehicleImage } = req.body;
 
   const newVehicleDetails = {
+    owner: req.payload._id,
     vehicle: vehicle,
     vehicleImage: vehicleImage,
-    userId: userId,
   };
 
   Vehicle.create(newVehicleDetails)
