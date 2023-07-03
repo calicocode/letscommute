@@ -7,7 +7,7 @@ const Vehicle = require("../models/Vehicle.model");
 
 
 
-//  POST /api/rides  -  Creates a new ride
+//  POST /api/rides  
 router.post("/rides", (req, res, next) => {
     const { fromCity, toCity, intervalOfRides, seats, driver, vehicle, vehicleImage, probationaryDriversLicense} = req.body;
 
@@ -38,7 +38,7 @@ router.post("/rides", (req, res, next) => {
 // GET /api/rides -  Retrieves all of the rides
 router.get('/rides', (req, res, next) => {
     Ride.find()
-        .populate("vehicles")
+        .populate("vehicle")
         .then(response => {
             res.json(response)
         })
