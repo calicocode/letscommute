@@ -79,7 +79,7 @@ router.get("/rides/:rideId", (req, res, next) => {
 });
 
 // PUT /api/ride/:rideId  -  Updates a specific ride by id
-router.put("/ride/:rideId", (req, res, next) => {
+router.put("/rides/:rideId", (req, res, next) => {
   const { rideId } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(rideId)) {
