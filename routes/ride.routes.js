@@ -4,11 +4,12 @@ const mongoose = require("mongoose");
 
 const Ride = require("../models/Ride.model");
 const Vehicle = require("../models/Vehicle.model");
+const { isAuthenticated } = require("../middleware/jwt.middleware");
 
 
 
 //  POST /api/rides  
-router.post("/rides", (req, res, next) => {
+router.post("/rides", isAuthenticated,(req, res, next) => {
     const { fromCity, toCity, intervalOfRides, seats, driver, vehicle, vehicleImage, probationaryDriversLicense} = req.body;
 
     const newRide = {
@@ -16,7 +17,7 @@ router.post("/rides", (req, res, next) => {
         toCity: toCity,
         intervalOfRides: intervalOfRides,
         seats: seats,
-        driver: driver,
+        driver: req.payload._id,
         vehicle: vehicle,
         vehicleImage: vehicleImage,
         probationaryDriversLicense: probationaryDriversLicense,
