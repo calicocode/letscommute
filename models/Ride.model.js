@@ -11,20 +11,14 @@ const rideSchema = new Schema(
       type: String,
       required: [true, "To City is required."],
     },
-    IntervalOfRides: {
+    intervalOfRides: {
       type: String,
-      enum: [
-        "multiple times a Week",
-        "1 x Week",
-        "Every 2 Weeks",
-        "Every 3 Weeks",
-        "Once a month",
-      ],
     },
+
     seats: {
       type: Number,
-      enum: [1, 2, 3, 4, 5, 6],
     },
+
     driver: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
