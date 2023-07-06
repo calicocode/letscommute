@@ -61,13 +61,14 @@ router.get("/rides", (req, res, next) => {
 router.get("/rides/:rideId", (req, res, next) => {
   const { rideId } = req.params;
 
+
   if (!mongoose.Types.ObjectId.isValid(rideId)) {
     res.status(400).json({ message: "Specified id is not valid" });
     return;
   }
 
   Ride.findById(rideId)
-    .populate("vehicle")
+    .populate({path: "vehicle", populate: {path: "owner", select: "-password"}})
     .then((ride) => res.json(ride))
     .catch((err) => {
       console.log("error getting details of a ride", err);
