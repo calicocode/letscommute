@@ -1,6 +1,5 @@
 const { Schema, model } = require("mongoose");
 
-
 const vehicleSchema = new Schema(
   {
     owner: {
@@ -11,7 +10,7 @@ const vehicleSchema = new Schema(
       type: String,
       required: [true, "Vehicle is required."],
     },
-    vehicleImage: {
+    imageUrl: {
       type: String,
       default:
         "https://www.mivodo.com/wp-content/uploads/2021/02/seat-alhambra-grosser-van-fuer-familien.jpg",
