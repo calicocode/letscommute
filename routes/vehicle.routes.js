@@ -16,7 +16,7 @@ router.get("/vehicle", isAuthenticated, (req, res, next) => {
 })
 })
 
-//  POST /api/tasks  -  Creates a new vehicle
+//  POST /api/vehicles  -  Creates a new vehicle
 router.post("/vehicle", isAuthenticated,(req, res, next) => {
   const { vehicle, imageUrl } = req.body;
 

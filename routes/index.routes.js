@@ -21,19 +21,5 @@ router.post("/upload", fileUploader.single("imageUrl"), (req, res, next) => {
 
   res.json({ fileUrl: req.file.path });
 });
-/*
-// POST '/api/movies' => for saving a new movie in the database
-router.post('/vehicle', (req, res, next) => {
-  // console.log('body: ', req.body); ==> here we can see that all
-  // the fields have the same names as the ones in the model so we can simply pass
-  // req.body to the .create() method
- 
-  Movie.create(req.body)
-    .then(createdMovie => {
-      // console.log('Created new movie: ', createdMovie);
-      res.status(200).json(createdMovie);
-    })
-    .catch(err => next(err));
-});
-*/
+
 module.exports = router;
