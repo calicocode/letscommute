@@ -4,7 +4,7 @@ Description:
 
 This repository contains the backend code for the project. The project aims to provide a platform for users to offer and find rides between different cities. The backend is built using Express API and MongoDB.
 
-Please note that this repository only includes the backend code. The frontend code (React) can be found in the following repository: [Link to Frontend Repository](https://github.com/your-frontend-repo)
+Please note that this repository only includes the backend code. The frontend code (React) can be found in the following repository: [Link to Frontend Repository]([https://github.com/your-frontend-repo](https://github.com/calicocode/letscommute-client))
 
 ## Instructions to Run
 
